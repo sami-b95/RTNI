@@ -172,9 +172,9 @@ class Calc:
                 G.remove_node(y)
     
             else: # case the node is a pendant.
-                if G.node[y]['original'][0][-1] != '*' and G.node[y]['original'][2] == 'L' :
+                if G.nodes[y]['original'][0][-1] != '*' and G.nodes[y]['original'][2] == 'L' :
                     side = 1
-                elif G.node[y]['original'][0][-1] == '*' and G.node[y]['original'][2] == 'R':
+                elif G.nodes[y]['original'][0][-1] == '*' and G.nodes[y]['original'][2] == 'R':
                     side = 1
                 else:
                     side = 2
@@ -351,7 +351,7 @@ def integrateHaarUnitary(EWs, RM_List):
  
     # making a dictionary to get the original form of input diagrams;
     # only for matrices left after the average, considering all graphs in Collections
-    Node_Dic = {y: x[0].node[y]['original'] for x in Collections for y in list(x[0])}
+    Node_Dic = {y: x[0].nodes[y]['original'] for x in Collections for y in list(x[0])}
     #print("Node_Dic", Node_Dic)
     
     # making the graph data into list data. (EW = Edges and weight)
